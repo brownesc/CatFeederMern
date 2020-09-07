@@ -22,7 +22,7 @@ const cors = require('cors');
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 5000
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
