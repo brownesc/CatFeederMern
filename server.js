@@ -24,9 +24,14 @@ app.use(bodyParser.json());
 app.use(cors());
 const port = process.env.PORT || 3001
 
+if (process.end.NODE_ENV === 'production') {
+  app.use(express.static('client/build'))
+}
+
+//Update for heroku
 const mongoConnectionSRV = "mongodb+srv://brownesc:brownesc@cluster0.rls06.mongodb.net/<dbname>?retryWrites=true&w=majority";
 const options = {useNewUrlParser: true, useUnifiedTopology: true, dbName: 'cat_feeding', };
-mongoose.connect("mongodb+srv://brownesc:brownesc@cluster0.rls06.mongodb.net/<dbname>?retryWrites=true&w=majority", options)
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://brownesc:brownesc@cluster0.rls06.mongodb.net/<dbname>?retryWrites=true&w=majority", options)
         .then(()=> console.log("Connected to MongoDB"))
         .catch((err)=> console.log(`Error connecting to MongoDB ${err}`));
 
