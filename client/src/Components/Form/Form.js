@@ -75,7 +75,7 @@ class Form extends React.Component{
         await this.setState({date: event.target.value})
         await axios({
             method: 'post',
-            url: '/',
+            url: '/date',
             data: {
               date: this.state.date,
             }

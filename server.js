@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
     // res.send({hi:'yes','yo':'eys',abd:true})
   })
 
-app.post('/',(req,res)=>{
+app.post('/date',(req,res)=>{
   handleDateChange(req, res);
 
 })
