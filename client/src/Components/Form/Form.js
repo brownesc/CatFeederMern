@@ -24,7 +24,7 @@ class Form extends React.Component{
         let currentState = this.state 
             await axios({
                 method: 'post',
-                url: 'http://localhost:3001/submit',
+                url: '/submit',
                 data: currentState,  
             })
         
@@ -35,7 +35,7 @@ class Form extends React.Component{
         let currentState = this.state 
         await axios({
             method: 'post',
-            url: 'http://localhost:3001/submit',
+            url: '/submit',
             data: currentState,  
             })
     }
@@ -75,7 +75,7 @@ class Form extends React.Component{
         await this.setState({date: event.target.value})
         await axios({
             method: 'post',
-            url: 'http://localhost:3001/',
+            url: '/',
             data: {
               date: this.state.date,
             }
