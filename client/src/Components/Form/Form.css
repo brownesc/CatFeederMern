@@ -1,0 +1,11 @@
+.totalForm {
+    display: grid;
+    gap: 1%;
+    grid-template-columns: 6em 6em 6em;
+    grid-template-rows: .1fr .1fr ;
+}
+
+.container{
+    display: grid;
+
+}
