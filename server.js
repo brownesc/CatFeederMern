@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.use(cors());
 const port = process.env.PORT || 3001
 
-if (process.end.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
 }
 
