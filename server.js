@@ -4,6 +4,7 @@ const axios = require('axios');
 const mongoose = require('mongoose');
 const Data = require('./dataModel');
 const cors = require('cors');
+const path = require('path');
 /**
  * MONGO PORTION
  */
@@ -23,7 +24,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 const port = process.env.PORT || 5000
-
+app.use(express.static(path.join(__dirname, 'client/build')));
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
 }
